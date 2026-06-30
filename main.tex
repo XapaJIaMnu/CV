@@ -1,0 +1,289 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.4, 27 July 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons 
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper]{altacv}
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages. 
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% 
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you may need to install
+%% Academicons.ttf in your operating system's font 
+%% folder.
+
+\renewcommand{\emailsymbol}{\faIcon{at}}
+
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=8.1cm,marginparwidth=6.1cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[default]{lato}
+%\usepackage{hyperref} 
+%\usepackage{url}
+% If using xelatex or lualatex:
+\setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+\newcommand\rurl[1]{%
+  \href{https://#1}{\nolinkurl{#1}}%
+}
+
+\addbibresource{sample.bib}
+\definecolor{mediumturquoise}{rgb}{0.28, 0.82, 0.8}
+\definecolor{cyan}{rgb}{0.0, 1.0, 1.0}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor= {blue!70!black} %{blue!80!black}
+}
+
+\usepackage{url}
+
+%Annotate the necesssary ones in the bibtext directly from here: https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex/304968
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+
+\begin{document}
+%
+
+
+\name{Nikolay Bogoychev}
+%\tagline{PhD student looking for post doctoral position}
+\tagline{Research Interest: Machine Translation, GPGPU, GEMM, Low/high level performance optimisation }
+%\photo{2.8cm}{Globe_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{\href{mailto:nheart@gmail.com}{nheart@gmail.com}}
+  \location{United Kingdom}
+  \homepage{\url{www.nbogoychev.com}}
+  \github{\href{https://github.com/XapaJIaMnu}{XapaJIaMnu}}
+  \stackoverflow{\href{https://stackoverflow.com/users/1846228/xapajiamnu}{XapaJIaMnu}}
+  \threads{\href{https://threads.net/@xapajiamnu}{@xapajiamnu}}
+  \bluesky{\href{https://bsky.app/profile/xapajiamnu.bsky.social}{@xapajiamnu.bsky.social}}
+  \mastodon{\href{https://social.linux.pizza/@xapajiamnu}{@xapajiamnu@social.linux.pizza}}
+  \scholar{\href{https://scholar.google.com/citations?user=z2hWTDMAAAAJ}{Nikolay Bogoychev}}
+  \linkedin{\href{https://www.linkedin.com/in/nikolay-bogoychev-01831023}{nikolay-bogoychev}}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+%   \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+%% Make the header extend all the way to the right, if you want. 
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Education}
+
+\cvevent{PhD}{School of Informatics, University of Edinburgh}{2015 -- 2019}{Edinburgh,United Kingdom}
+\begin{itemize}
+\item Thesis: Fast machine translation on parallel and massively parallel hardware
+
+\item Supervisors: Adam Lopez, Kenneth Heafield
+\end{itemize}
+
+%\divider
+
+\cvevent{BSc}{Artificial Intelligence and Computer science, University of Edinburgh }{2010 --  2014}{Edinburgh,United Kingdom}
+\begin{itemize}
+\item First Class Honours
+\end{itemize}
+
+%\divider
+
+\cvsection{Work Experience}
+
+\cvevent{CTO}{Last Token}{June 2026 - Present}{Remote, United Kingdom}
+Providing premium quality training data for Large language models.
+
+\divider
+
+\cvevent{Research Scientist}{Meta}{December 2023 - December 2025}{London, United Kingdom}
+Working on the LLaMa family of models.
+\begin{itemize}
+    \item Released the LLaMa 3.2 1B and 3B models
+    \item Created the \href{https://www.kaggle.com/datasets/metaresearch/multiloko}{\textit{Multiloko}} multilingual local knowledge evaluation dataset
+    \item Also worked on Pruning, Distillation, Evaluation, Scaling Laws, etc
+\end{itemize}
+
+\divider
+
+\cvevent{CTO}{Efficient Translation Limited}{March 2023 - December 2023}{Edinburgh, United Kingdom}
+Edge device machine translation for Privacy focussed customers.
+\begin{itemize}
+    \item x86/arm fast machine translation services deployed on local devices.
+    \item terminology translation.
+\end{itemize}
+
+\divider
+
+\cvevent{Postdoctoral Researcher}{University of Edinburgh, School of Informatics}{January 2019 - December 2023}{Edinburgh, United Kingdom}
+Working on neural machine translation and High performance computing
+\begin{itemize}
+    \item translateLocally, cross platform, fast, offline desktop translation software {\rurl{github.com/XapaJIaMnu/translateLocally}}
+    \item marian NMT 8bit integer CPU/GPU tensorcore inference code
+    \item CPU int8 VNNI GEMM: {\rurl{github.com/kpu/intgemm}}
+    \item Experimental GEMM tiling: {\rurl{github.com/XapaJIaMnu/bfTile}}
+    \item Bergamot: Privacy driven Firefox translation. For details: {\rurl{browser.mt}}
+\end{itemize}
+
+\divider
+
+\cvevent{Consultant}{Intel}{March 2019 - December 2023}{Edinburgh, United Kingdom}
+Exploring opportunities for CPU training and inference for NMT:
+\begin{itemize}
+    \item BF16 and other quantisation schemes for training and inference.
+    %\item Profile, optimise and vectorise NMT codebase.
+    \item Low level hardware specific optimisation with focus on NMT.
+\end{itemize}
+
+
+%\medskip
+
+\cvsection{Selected Publications}
+%\nocite{me_sgd}
+\begin{itemize}
+\item \fullcite{hupkes2025multilokomultilinguallocalknowledge}
+\item \fullcite{dubey2024llama3herdmodels}
+\item \fullcite{bogoychev-etal-2024-ups}
+\item \fullcite{bogoychev2023opuscleaneropustraineropensource}
+\item \fullcite{grivas-etal-2022-low}
+\item \fullcite{bogoychev-2021-parameters}
+\item \fullcite{bogoychev-etal-2021-translatelocally}
+\item \fullcite{bogoychev-chen-2021-highs}
+\item \fullcite{aji-etal-2020-neural}
+\item \fullcite{bogoychev-etal-2020-edinburghs}
+\item \fullcite{me_sgd}
+\item \fullcite{DBLP:conf/acl/BogoychevL16}
+\end{itemize}
+%\nocite{aji-etal-2020-neural}
+%\nocite{DBLP:conf/acl/BogoychevL16}
+%\begin{enumerate}
+%    \item \bibentry{me_sgd}
+%    \item \bibentry{aji-etal-2020-neural}
+%    \item \bibentry{DBLP:conf/acl/BogoychevL16}
+%  \end{enumerate}
+
+\cvsection[page2sidebar]{Talks and Tutorials}
+
+\cvevent{The Role of Locally Relevant Content in Evaluating Multilingual LLMs}{LocWorld54}{09/2025}{Monterey, United States}
+{\rurl{https://nbogoychev.com/files/publications/locworld_multilko.pdf}}
+
+\divider
+
+\cvevent{Efficient Machine translation tutorial}{MT Marathon}{11/2021}{Edinburgh, United Kingdom}
+{\rurl{nbogoychev.com/efficient-machine-translation/}}
+
+
+%\cvsection{Other Experience}
+%\cvevent{Consultant}{myLanguage}{12/2020}{Edinburgh, United Kingdom}
+%\begin{itemize}
+%    \item Porting x86\_64 software to ARM.
+%    \item Providing knowledge about neural machine translation model training.
+%\end{itemize}
+
+\divider
+
+%\cvevent{Parallelism Research intern}{Intel}{06/06/2017 - 06/10/2017}{Santa Clara, California, USA}
+%Worked on Neural machine translation training on CPUs. Produced a detailed breakdown and the communication and computation costs of each operation in neural machine translation training. Developed methods for reducing internode communication during training.
+
+%\divider
+
+%\cvevent{Machine Learning Intern}{Amazon}{01/06/2016 - 30/09/2016}{Berlin, Germany}
+%Optimising Spark/Scala Bayesian inference framework.
+
+%\divider
+
+%\cvevent{Research Assistant}{University of Edinburgh}{01/06/2014 - 01/12/2016}{Edinburgh, United Kingdom}
+%Working on Statistical Machine translation
+%\begin{itemize}
+%    \item Multithreading optimisation for Moses.
+%    \item Bilingual language model feature function for Moses.
+%\end{itemize}
+
+%\divider
+
+%\cvevent{Intern}{Contemplate}{01/06/2013 - 01/09/2013}{Edinburgh, United Kingdom}
+%Developing a JS frontend for a Java static analysis toolkit.
+
+%\divider
+
+%\cvevent{Language Intern}{SwiftKey}{01/06/2012 - 01/09/2012}{London, United Kingdom}
+%Working on predictive typing framework for mobile phones.
+%\begin{itemize}
+%    \item Create language models for various language pairs.
+%    \item Developing intelligent web crawler in clojure.
+%\end{itemize}
+
+\nocite{*}
+
+
+
+%\printbibliography[heading=none,title={},maxnames=2]%,type=inproceedings]
+
+
+%% If the NEXT page doesn't start with a \cvsection but you'd
+%% still like to add a sidebar, then use this command on THIS
+%% page to add it. The optional argument lets you pull up the 
+%% sidebar a bit so that it looks aligned with the top of the
+%% main column.
+% \addnextpagesidebar[-1ex]{page3sidebar}
+
+
+\end{document}
